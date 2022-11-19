@@ -19,3 +19,7 @@ const String tNumber1 = "assets/logo/number1-logo.png";
 const String tNumber2 = "assets/logo/number2-logo.png";
 const String tNumber3 = "assets/logo/number3-logo.png";
 
+const String tRechaerg = "assets/images/rechaerg.png";
+const String tSerg = "assets/images/serg.png";
+const String tKane = "assets/images/kane.png";
+const String tChoi = "assets/images/choi.png";
