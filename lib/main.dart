@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:mentasia/src/features/authentication/screens/apphome.dart';
+import 'package:mentasia/src/features/authentication/screens/homescreen.dart';
 import 'package:mentasia/src/features/authentication/screens/splash_screen/splash_screen.dart';
 import 'package:mentasia/src/utils/theme/theme.dart';
 

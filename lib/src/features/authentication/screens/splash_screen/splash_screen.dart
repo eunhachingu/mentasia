@@ -5,7 +5,7 @@ import 'package:mentasia/src/constants/image_strings.dart';
 import 'package:mentasia/src/constants/sizes.dart';
 import 'package:mentasia/src/features/authentication/controllers/splash_screen_controller.dart';
 
-import '../apphome.dart';
+import '../homescreen.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
