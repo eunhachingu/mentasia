@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mentasia/src/features/authentication/screens/chat_screen.dart';
+import 'package:mentasia/src/features/authentication/screens/settings/account_settings/personal_account_screen.dart';
 import 'package:mentasia/src/features/authentication/screens/settings/settings_screen.dart';
 import 'package:mentasia/src/features/authentication/screens/settings/support/about_us_screen.dart';
 import 'package:mentasia/src/features/authentication/screens/settings/support/help_feedback_screen.dart';
@@ -19,7 +20,7 @@ class SplashScreenController extends GetxController {
     animate.value = true;
     await Future.delayed(Duration(milliseconds: 3000));
     // ignore: use_build_context_synchronously
-    Get.to(SettingsScreen());
+    Get.to(PersonalAccountScreen());
     // Navigator.pushReplacement(
     //     context, MaterialPageRoute(builder: (context) => const AppHome()));
   }
