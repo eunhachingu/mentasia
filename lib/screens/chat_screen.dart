@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mentasia/src/constants/image_strings.dart';
-import 'package:mentasia/src/features/authentication/screens/settings/settings_screen.dart';
-import 'package:mentasia/src/routing/route_generator.dart';
+
+import '../constants/image_strings.dart';
+import '../routing/route_generator.dart';
+
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mentasia/src/constants/image_strings.dart';
-import 'package:mentasia/src/common_widgets/members_widget.dart';
+
+import '../../../constants/image_strings.dart';
+import '../../../utils/members_widget.dart';
+
 
 class AboutUsScreen extends StatefulWidget {
   const AboutUsScreen({super.key});

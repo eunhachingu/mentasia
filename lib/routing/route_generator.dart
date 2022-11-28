@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mentasia/src/constants/routes_strings.dart';
-import 'package:mentasia/src/features/authentication/screens/home_screen.dart';
-import 'package:mentasia/src/features/authentication/screens/chat_screen.dart';
-import 'package:mentasia/src/features/authentication/screens/settings/settings_screen.dart';
-import 'package:mentasia/src/features/authentication/screens/settings/support/about_us_screen.dart';
-import 'package:mentasia/src/features/authentication/screens/settings/support/help_feedback_screen.dart';
-import 'package:mentasia/src/features/authentication/screens/settings/support/mentasia_works_screen.dart';
-import 'package:mentasia/src/features/authentication/screens/splash_screen/splash_screen.dart';
+
+import '../constants/routes_strings.dart';
+import '../screens/chat_screen.dart';
+import '../screens/home_screen.dart';
+import '../screens/settings/settings_screen.dart';
+import '../screens/settings/support/about_us_screen.dart';
+import '../screens/settings/support/help_feedback_screen.dart';
+import '../screens/settings/support/mentasia_works_screen.dart';
+import '../screens/splash_screen/splash_screen.dart';
+
 
 class RoutesClass {
   static String getSplashRoute() => RoutesList.splash;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentasia/src/constants/image_strings.dart';
+
+import '../../../constants/image_strings.dart';
 
 class MentasiaWorksScreen extends StatefulWidget {
   const MentasiaWorksScreen({super.key});

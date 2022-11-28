@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:mentasia/src/features/authentication/screens/home_screen.dart';
-import 'package:mentasia/src/features/authentication/screens/chat_screen.dart';
-import 'package:mentasia/src/features/authentication/screens/splash_screen/splash_screen.dart';
-import 'package:mentasia/src/routing/route_generator.dart';
-import 'package:mentasia/src/utils/theme/theme.dart';
+import 'package:mentasia/routing/route_generator.dart';
+import 'package:mentasia/utils/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentasia/src/utils/theme/widget_themes/text_theme.dart';
+import 'package:mentasia/utils/theme/widget_themes/text_theme.dart';
 
 class TAppTheme {
   TAppTheme._();

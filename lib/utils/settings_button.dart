@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentasia/src/constants/image_strings.dart';
 
 class SettingsButton extends StatelessWidget {
   final String textLabel;

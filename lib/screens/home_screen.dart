@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentasia/src/constants/image_strings.dart';
-import 'package:mentasia/src/features/authentication/screens/chat_screen.dart';
-import 'package:mentasia/src/routing/route_generator.dart';
+
+import '../constants/image_strings.dart';
+import '../routing/route_generator.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

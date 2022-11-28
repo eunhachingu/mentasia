@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mentasia/src/common_widgets/settings_button.dart';
-import 'package:mentasia/src/constants/image_strings.dart';
+
+import '../../constants/image_strings.dart';
+import '../../utils/settings_button.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});

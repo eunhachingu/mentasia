@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentasia/src/constants/image_strings.dart';
-import 'package:mentasia/src/constants/sizes.dart';
-import 'package:mentasia/src/features/authentication/controllers/splash_screen_controller.dart';
 
+
+import '../../constants/image_strings.dart';
+import '../../controllers/splash_screen_controller.dart';
 import '../home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
