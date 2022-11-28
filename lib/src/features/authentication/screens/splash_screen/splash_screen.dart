@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mentasia/src/constants/image_strings.dart';
 import 'package:mentasia/src/constants/sizes.dart';
 import 'package:mentasia/src/features/authentication/controllers/splash_screen_controller.dart';
 
-import '../homescreen.dart';
+import '../home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
@@ -16,6 +17,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     splashController.startAnimation();
     return Scaffold(
+      backgroundColor: Color(0xFF429191),
       body: SafeArea(
         child: Center(
           child: Stack(
@@ -25,8 +27,10 @@ class SplashScreen extends StatelessWidget {
               Obx(
                 () => AnimatedPositioned(
                   duration: const Duration(milliseconds: 1600),
-                  top: splashController.animate.value ? 50 : 0,
+                  top: splashController.animate.value ? 200 : 100,
                   child: const Image(
+                    width: 120,
+                    height: 120,
                     image: AssetImage(tSplashIcon),
                   ),
                 ),
@@ -34,12 +38,18 @@ class SplashScreen extends StatelessWidget {
               Obx(
                 () => AnimatedPositioned(
                   duration: const Duration(milliseconds: 1600),
-                  top: 300,
+                  top: 320,
                   child: AnimatedOpacity(
                     duration: const Duration(milliseconds: 1600),
                     opacity: splashController.animate.value ? 1 : 0,
-                    child: const Text(
+                    child: Text(
                       "MENTASIA",
+                      style: GoogleFonts.barlowCondensed(
+                        fontSize: 48,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 15,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -49,9 +59,16 @@ class SplashScreen extends StatelessWidget {
                   duration: const Duration(milliseconds: 1600),
                   bottom: 20,
                   child: AnimatedOpacity(
-                      duration: const Duration(milliseconds: 1600),
-                      opacity: splashController.animate.value ? 1 : 0,
-                      child: const Text("created by Rechaerg")),
+                    duration: const Duration(milliseconds: 1600),
+                    opacity: splashController.animate.value ? 1 : 0,
+                    child: Text(
+                      "made by Rechaerg",
+                      style: GoogleFonts.barlowCondensed(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
               )
             ],

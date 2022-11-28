@@ -3,6 +3,9 @@
 // Splash Screen
 const String tSplashIcon = "assets/logo/logo.png";
 
+// Home Scree
+const String tTabIcon = "assets/logo/tab-logo.png";
+
 // Settings
 const String tProfileIcon = "assets/logo/profile-logo.png";
 const String tAboutUs = "assets/logo/about-us-logo.png";
@@ -12,6 +15,7 @@ const String tNotification = "assets/logo/notification-logo.png";
 const String tPersonalInfo = "assets/logo/personal-info-logo.png";
 const String tTermsandService = "assets/logo/terms-of-service-logo.png";
 const String tCancel = "assets/logo/cancel-logo.png";
+const String tLogo = "assets/logo/logo_small.png";
 
 // Support Settings
 

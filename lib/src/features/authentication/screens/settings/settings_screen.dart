@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentasia/src/common_widgets/settings_button.dart';
 import 'package:mentasia/src/constants/image_strings.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -25,7 +26,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 30, vertical: 10),
                     alignment: Alignment.centerRight,
-                    child: Image(
+                    child: const Image(
                       image: AssetImage(tCancel),
                     )),
 
@@ -67,49 +68,23 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
                   child: Text("Account Settings"),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: OutlinedButton.icon(
-                    icon: const Image(image: AssetImage(tPersonalInfo)),
-                    label: const Text("Personal & Account Information"),
-                    style: OutlinedButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size.fromHeight(48),
-                    ),
-                    onPressed: () {},
-                  ),
+
+                const SettingsButton(
+                  textLabel: "Personal & Account Information",
+                  imageString: tPersonalInfo,
                 ),
+
                 const SizedBox(
                   height: 10,
                 ),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: OutlinedButton.icon(
-                    icon: const Image(image: AssetImage(tPersonalInfo)),
-                    label: const Text("Notification"),
-                    style: OutlinedButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size.fromHeight(48),
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
+                const SettingsButton(
+                  textLabel: "Notification",
+                  imageString: tNotification,
                 ),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: OutlinedButton.icon(
-                    icon: const Image(image: AssetImage(tPersonalInfo)),
-                    label: const Text("Language"),
-                    style: OutlinedButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size.fromHeight(48),
-                    ),
-                    onPressed: () {},
-                  ),
+                const SizedBox(
+                  height: 10,
                 ),
 
                 // Support
@@ -117,73 +92,42 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
                   child: Text("Support"),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: OutlinedButton.icon(
-                    icon: const Image(image: AssetImage(tPersonalInfo)),
-                    label: const Text("Language"),
-                    style: OutlinedButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size.fromHeight(48),
-                    ),
-                    onPressed: () {},
-                  ),
+
+                const SettingsButton(
+                  textLabel: "How Mentasia Works",
+                  imageString: tLogo,
                 ),
+
                 const SizedBox(
                   height: 10,
                 ),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: OutlinedButton.icon(
-                    icon: const Image(image: AssetImage(tPersonalInfo)),
-                    label: const Text("How Mentasia Works"),
-                    style: OutlinedButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size.fromHeight(48),
-                    ),
-                    onPressed: () {},
-                  ),
+                const SettingsButton(
+                  textLabel: "About Us",
+                  imageString: tAboutUs,
                 ),
+
                 const SizedBox(
                   height: 10,
                 ),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: OutlinedButton.icon(
-                    icon: const Image(image: AssetImage(tPersonalInfo)),
-                    label: const Text("About Us"),
-                    style: OutlinedButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size.fromHeight(48),
-                    ),
-                    onPressed: () {},
-                  ),
+                const SettingsButton(
+                  textLabel: "Help and Feedback",
+                  imageString: tHelp,
                 ),
 
-                // Legal
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
-                  child: Text("Help and Feedback"),
+                  child: Text("Legal"),
                 ),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20.0,
-                  ),
-                  child: OutlinedButton.icon(
-                    icon: const Image(image: AssetImage(tPersonalInfo)),
-                    label: const Text("Terms of Service"),
-                    style: OutlinedButton.styleFrom(
-                      alignment: Alignment.centerLeft,
-                      minimumSize: const Size.fromHeight(48),
-                    ),
-                    onPressed: () {},
-                  ),
+                const SizedBox(
+                  height: 10,
                 ),
-                SizedBox(
-                  height: 50,
+
+                const SettingsButton(
+                  textLabel: "Terms of Service",
+                  imageString: tTermsandService,
                 ),
               ],
             );

@@ -28,7 +28,7 @@ class MembersWidget extends StatelessWidget {
         Container(
             width: 240,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(15.0),
             ),
             child: Padding(
