@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mentasia/constants/image_strings.dart';
+
+import '../../../utils/account_card.dart';
 
 class PersonalAccountScreen extends StatefulWidget {
   const PersonalAccountScreen({super.key});
@@ -8,6 +11,11 @@ class PersonalAccountScreen extends StatefulWidget {
 }
 
 class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
+  final _nameController = TextEditingController();
+  final _usernameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,29 +37,42 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
+                  color: Colors.white,
                   padding: const EdgeInsets.all(20),
                   width: double.infinity,
                   height: 500,
-                  color: Colors.blue,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text("Name:"),
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: "Sample X. Name",
-                          fillColor: Colors.white,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
-                            borderRadius: BorderRadius.circular(5.5),
+                      AccountCard(
+                        controller: _nameController,
+                        hintText: "Sample X. Name",
+                        labelText: "Name:",
+                      ),
+                      AccountCard(
+                        controller: _usernameController,
+                        hintText: "Sample Username",
+                        labelText: "Name:",
+                      ),
+                      AccountCard(
+                        controller: _emailController,
+                        hintText: "sample99@email.com",
+                        labelText: "Email:",
+                      ),
+                      AccountCard(
+                        controller: _passwordController,
+                        hintText: "password",
+                        labelText: "Password:",
+                      ),
+                      Center(
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(horizontal: 50),
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black),
-                            borderRadius: BorderRadius.circular(5.5),
-                          ),
+                          onPressed: () {},
+                          child: Text("Save"),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

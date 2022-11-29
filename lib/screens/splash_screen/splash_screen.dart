@@ -27,7 +27,7 @@ class SplashScreen extends StatelessWidget {
               Obx(
                 () => AnimatedPositioned(
                   duration: const Duration(milliseconds: 1600),
-                  top: splashController.animate.value ? 200 : 100,
+                  top: splashController.animate.value ? 200 : 150,
                   child: const Image(
                     width: 120,
                     height: 120,
