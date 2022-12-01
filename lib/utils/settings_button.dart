@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mentasia/routing/route_generator.dart';
 
 class SettingsButton extends StatelessWidget {
   final String textLabel;
   final imageString;
 
-  const SettingsButton({super.key, required this.textLabel, this.imageString});
+  SettingsButton({
+    super.key,
+    required this.textLabel,
+    this.imageString,
+  });
 
   @override
   Widget build(BuildContext context) {

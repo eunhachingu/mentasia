@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../constants/image_strings.dart';
 import '../routing/route_generator.dart';
 
-
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
 
