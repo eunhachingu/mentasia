@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mentasia/controllers/auth_controllers.dart';
 import 'package:mentasia/routing/route_generator.dart';
+import 'package:mentasia/screens/login/signup_screen.dart';
 import 'package:mentasia/utils/reusable_form.dart';
 import 'package:mentasia/utils/submit_card.dart';
 
@@ -49,9 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Text("Don't have an account?"),
                 TextButton(
-                  onPressed: () => Get.toNamed(
-                    RoutesClass.getSignupRoute(),
-                  ),
+                  onPressed: () => Get.to(SignupScreen()),
                   child: Text("Sign up"),
                 ),
               ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mentasia/controllers/auth_controllers.dart';
 import 'package:mentasia/routing/route_generator.dart';
+import 'package:mentasia/screens/chat_screen.dart';
 import 'package:mentasia/screens/settings/account_settings/notifications_screen.dart';
 import 'package:mentasia/screens/settings/legal/terms_of_service_screen.dart';
 import 'package:mentasia/screens/settings/support/about_us_screen.dart';
@@ -38,7 +39,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           horizontal: 30, vertical: 10),
                       alignment: Alignment.centerRight,
                       child: InkWell(
-                        onTap: () => Get.toNamed(RoutesClass.getChatRoute()),
+                        onTap: () => Get.to(
+                          ChatScreen(),
+                        ),
                         child: const Image(
                           image: AssetImage(tCancel),
                         ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mentasia/screens/chat_screen.dart';
+import 'package:mentasia/screens/login/login_screen.dart';
 
 import '../constants/image_strings.dart';
 import '../routing/route_generator.dart';
@@ -98,7 +100,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.all(0),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20))),
-                    onPressed: () => Get.toNamed(RoutesClass.getChatRoute()),
+                    onPressed: () => Get.to(
+                      ChatScreen(),
+                    ),
                     child: Ink(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -126,8 +130,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text("Have an account?"),
                     TextButton(
-                      onPressed: () => Get.toNamed(
-                        RoutesClass.getLoginRoute(),
+                      onPressed: () => Get.to(
+                        LoginScreen(),
                       ),
                       child: Text("Login"),
                     ),
