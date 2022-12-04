@@ -27,3 +27,6 @@ const String tRechaerg = "assets/images/rechaerg.png";
 const String tSerg = "assets/images/serg.png";
 const String tKane = "assets/images/kane.png";
 const String tChoi = "assets/images/choi.png";
+
+// bg
+const String tEllipseBg = "assets/images/ellipse_bg.png";

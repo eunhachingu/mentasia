@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "777619474279",
+    "project_id": "mentasia-7976b",
+    "storage_bucket": "mentasia-7976b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777619474279:android:11791b44fe96e75542d1c2",
+        "android_client_info": {
+          "package_name": "com.example.mentasia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777619474279-9bkkdrivnotvod7dv3giqlg2r1236c30.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFpgnfOFZjjffXo5VJzy5FYRE4M32vCVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777619474279-9bkkdrivnotvod7dv3giqlg2r1236c30.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
