@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mentasia/controllers/auth_controllers.dart';
 import 'package:mentasia/routing/route_generator.dart';
+import 'package:mentasia/screens/settings/account_settings/notifications_screen.dart';
+import 'package:mentasia/screens/settings/legal/terms_of_service_screen.dart';
+import 'package:mentasia/screens/settings/support/about_us_screen.dart';
+import 'package:mentasia/screens/settings/support/mentasia_works_screen.dart';
+import 'package:mentasia/utils/submit_card.dart';
 
 import '../../constants/image_strings.dart';
 import '../../utils/settings_button.dart';
@@ -13,6 +19,7 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  AuthController authController = AuthController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -77,92 +84,86 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     child: Text("Account Settings"),
                   ),
 
-                  InkWell(
-                    onTap: () =>
-                        Get.toNamed(RoutesClass.getPersonalInfoRoute()),
-                    child: SettingsButton(
-                      textLabel: "Personal & Account Information",
-                      imageString: tPersonalInfo,
+                  SettingsButton(
+                    textLabel: "Personal & Account Information",
+                    imageString: tPersonalInfo,
+                    onTap: () => Get.to(
+                      SettingsScreen(),
                     ),
                   ),
 
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
 
-                  InkWell(
-                    onTap: () =>
-                        Get.toNamed(RoutesClass.getNotificationsRoute()),
-                    child: SettingsButton(
-                      textLabel: "Notification",
-                      imageString: tNotification,
+                  SettingsButton(
+                    textLabel: "Notification",
+                    imageString: tNotification,
+                    onTap: () => Get.to(
+                      NotificationsScreen(),
                     ),
-                  ),
-
-                  const SizedBox(
-                    height: 10,
                   ),
 
                   // Support
                   const Padding(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
+                        EdgeInsets.symmetric(horizontal: 30.0, vertical: 5),
                     child: Text("Support"),
                   ),
 
-                  InkWell(
-                    onTap: () => Get.toNamed(
-                      RoutesClass.getMentasiaWorksRoute(),
-                    ),
-                    child: SettingsButton(
-                      textLabel: "How Mentasia Works",
-                      imageString: tLogo,
+                  SettingsButton(
+                    textLabel: "How Mentasia Works",
+                    imageString: tLogo,
+                    onTap: () => Get.to(
+                      MentasiaWorksScreen(),
                     ),
                   ),
 
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
 
-                  InkWell(
-                    onTap: () => Get.toNamed(RoutesClass.getAboutUsRoute()),
-                    child: SettingsButton(
-                      textLabel: "About Us",
-                      imageString: tAboutUs,
+                  SettingsButton(
+                    textLabel: "About Us",
+                    imageString: tAboutUs,
+                    onTap: () => Get.to(
+                      AboutUsScreen(),
                     ),
                   ),
 
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
 
-                  InkWell(
-                    onTap: () =>
-                        Get.toNamed(RoutesClass.getHelpFeedBackRoute()),
-                    child: SettingsButton(
-                      textLabel: "Help and Feedback",
-                      imageString: tHelp,
+                  SettingsButton(
+                    textLabel: "Help and Feedback",
+                    imageString: tHelp,
+                    onTap: () => Get.to(
+                      SettingsScreen(),
                     ),
                   ),
 
                   const Padding(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
+                        EdgeInsets.symmetric(horizontal: 30.0, vertical: 5),
                     child: Text("Legal"),
                   ),
 
-                  const SizedBox(
-                    height: 10,
-                  ),
-
-                  InkWell(
-                    onTap: () =>
-                        Get.toNamed(RoutesClass.getTermsAndServicesRoute()),
-                    child: SettingsButton(
-                      textLabel: "Terms of Service",
-                      imageString: tTermsandService,
+                  SettingsButton(
+                    textLabel: "Terms of Service",
+                    imageString: tTermsandService,
+                    onTap: () => Get.to(
+                      TermsOfServiceScreen(),
                     ),
                   ),
+
+                  SizedBox(
+                    height: 20,
+                  ),
+
+                  SubmitCard(
+                      buttonText: "Logout",
+                      onTap: () => authController.logoutUser()),
                 ],
               );
             }),

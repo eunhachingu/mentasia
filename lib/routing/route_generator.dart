@@ -7,6 +7,8 @@ import 'package:mentasia/screens/settings/legal/terms_of_service_screen.dart';
 import '../constants/routes_strings.dart';
 import '../screens/chat_screen.dart';
 import '../screens/home_screen.dart';
+import '../screens/login/login_screen.dart';
+import '../screens/login/signup_screen.dart';
 import '../screens/settings/settings_screen.dart';
 import '../screens/settings/support/about_us_screen.dart';
 import '../screens/settings/support/help_feedback_screen.dart';
@@ -17,6 +19,8 @@ class RoutesClass {
   static String getSplashRoute() => RoutesList.splash;
   static String getHomeRoute() => RoutesList.homeScreen;
   static String getChatRoute() => RoutesList.chatScreen;
+  static String getLoginRoute() => RoutesList.loginScreen;
+  static String getSignupRoute() => RoutesList.signupScreen;
   static String getSettingsRoute() => RoutesList.settingsScreen;
   static String getPersonalInfoRoute() => RoutesList.personalInformationScreen;
   static String getNotificationsRoute() => RoutesList.notifications;
@@ -35,6 +39,15 @@ class RoutesClass {
       name: RoutesList.chatScreen,
       page: () => const ChatScreen(),
     ),
+    GetPage(
+      name: RoutesList.loginScreen,
+      page: () => const LoginScreen(),
+    ),
+    GetPage(
+      name: RoutesList.signupScreen,
+      page: () => const SignupScreen(),
+    ),
+
     GetPage(
         name: RoutesList.settingsScreen, page: () => const SettingsScreen()),
     GetPage(

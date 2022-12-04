@@ -121,14 +121,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-                Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Already has an account?"),
-                      Text("Login"),
-                    ],
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Have an account?"),
+                    TextButton(
+                      onPressed: () => Get.toNamed(
+                        RoutesClass.getLoginRoute(),
+                      ),
+                      child: Text("Login"),
+                    ),
+                  ],
                 ),
               ],
             ),
