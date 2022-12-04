@@ -166,7 +166,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
                   SubmitCard(
                       buttonText: "Logout",
-                      onTap: () => authController.logoutUser()),
+                      onTap: () => authController.logoutUser(),),
                 ],
               );
             }),
