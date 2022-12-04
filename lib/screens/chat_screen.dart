@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mentasia/screens/settings/settings_screen.dart';
 
 import '../constants/image_strings.dart';
 import '../routing/route_generator.dart';
@@ -20,7 +21,9 @@ class _ChatScreenState extends State<ChatScreen> {
           leading: Padding(
             padding: const EdgeInsets.all(10.0),
             child: InkWell(
-                onTap: () => Get.toNamed(RoutesClass.getSettingsRoute()),
+                onTap: () => Get.to(
+                      SettingsScreen(),
+                    ),
                 child: const Image(
                   image: AssetImage(tTabIcon),
                 )),

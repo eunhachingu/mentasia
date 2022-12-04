@@ -51,8 +51,8 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 Text("Already have an acount?"),
                 TextButton(
-                  onPressed: () => Get.toNamed(
-                    RoutesClass.getLoginRoute(),
+                  onPressed: () => Get.to(
+                    SignupScreen(),
                   ),
                   child: Text("Login"),
                 ),
