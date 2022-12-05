@@ -17,15 +17,12 @@ class _MentasiaWorksScreenState extends State<MentasiaWorksScreen> {
       body: Column(
         children: [
           // How Mentasia Works
-          const Center(
+          Center(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 40),
               child: Text(
                 "How Mentasia Works",
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.labelLarge,
               ),
             ),
           ),

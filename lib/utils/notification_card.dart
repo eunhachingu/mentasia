@@ -17,7 +17,10 @@ class NotificationCard extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(labelText),
+        Text(
+          labelText,
+          style: Theme.of(context).textTheme.labelLarge,
+        ),
         CupertinoSwitch(value: isPowerOn, onChanged: onChanged),
       ],
     );

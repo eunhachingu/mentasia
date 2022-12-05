@@ -32,11 +32,10 @@ class SubmitCard extends StatelessWidget {
           child: Center(
             child: Text(
               buttonText,
-              style: GoogleFonts.slabo13px(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                
-              ),
+              style: Theme.of(context)
+                  .textTheme
+                  .labelMedium
+                  ?.copyWith(color: colorText),
             ),
           ),
         ),
