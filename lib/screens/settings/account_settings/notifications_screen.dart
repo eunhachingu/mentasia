@@ -29,10 +29,13 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            const Center(
+            Center(
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 40.0),
-                child: Text("Notifications"),
+                padding: EdgeInsets.symmetric(vertical: 20.0),
+                child: Text(
+                  "Notifications",
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
               ),
             ),
             Padding(

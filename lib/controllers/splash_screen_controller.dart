@@ -20,7 +20,7 @@ class SplashScreenController extends GetxController {
     animate.value = true;
     await Future.delayed(Duration(milliseconds: 3000));
     // ignore: use_build_context_synchronously
-    Get.to(const MentasiaWorksScreen());
+    Get.to(const SettingsScreen());
     // Navigator.pushReplacement(
     //     context, MaterialPageRoute(builder: (context) => rconst AppHome()));
   }

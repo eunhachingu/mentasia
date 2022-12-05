@@ -15,14 +15,17 @@ class MentasiaCard extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(5),
         color: Colors.grey[300],
-        width: 150,
+        width: 250,
         child: Column(
           children: [
             Image(
               image: AssetImage(image),
             ),
             Center(
-              child: Text(labelText),
+              child: Text(
+                labelText,
+                style: Theme.of(context).textTheme.displaySmall,
+              ),
             ),
           ],
         ),

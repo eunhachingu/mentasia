@@ -28,13 +28,11 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Personal & Account Information
-            Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 40.0),
-                child: Text(
-                  "Personal & Account Information",
-                  style: Theme.of(context).textTheme.labelLarge,
-                ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
+              child: Text(
+                "Personal & Account Information",
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
 

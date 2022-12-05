@@ -15,44 +15,40 @@ class _MentasiaWorksScreenState extends State<MentasiaWorksScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Stack(
-        // ignore: prefer_const_literals_to_create_immutables
+      body: Column(
         children: [
-          // How Mentasia Works
+          SizedBox(
+            height: 20,
+          ),
           Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 20.0),
-              child: Text(
-                "How Mentasia Works",
-                style: Theme.of(context).textTheme.labelLarge,
-              ),
+            child: Text(
+              "How Mentasia Works",
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
-          const Positioned(
-            top: 150,
-            right: 50,
-            child: MentasiaCard(
+          SizedBox(
+            height: 50,
+          ),
+          MentasiaCard(
               image: tGmail,
               labelText:
-                  "Sign in using Google or Facebook to optimized your personal experienced",
-            ),
+                  "Sign in using Google or Facebook.To optimized your personal experienced"),
+          SizedBox(
+            height: 50,
           ),
-          const Positioned(
-            top: 350,
-            left: 50,
-            child: MentasiaCard(
+          MentasiaCard(
               image: tChat,
               labelText:
-                  "Chat with our chatbot, the bot will provide your needs.",
-            ),
+                  "Chat with our chatbot. The bot will provide your needs."),
+          SizedBox(
+            height: 50,
           ),
-          const Positioned(
-            top: 550,
-            right: 50,
-            child: MentasiaCard(
+          MentasiaCard(
               image: tMind,
-              labelText: "Compassionate Interlocutor, Contact to professional.",
-            ),
+              labelText:
+                  "Comppassionate Interlocutor. Contact to professional."),
+          SizedBox(
+            height: 50,
           ),
         ],
       ),
