@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mentasia/constants/image_strings.dart';
+import 'package:mentasia/screens/settings/settings_screen.dart';
+import 'package:mentasia/utils/submit_card.dart';
 
 import '../../../utils/account_card.dart';
 
@@ -22,27 +25,29 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Personal & Account Information
-            const Center(
+            Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 40.0),
-                child: Text("Personal & Account Information"),
+                child: Text(
+                  "Personal & Account Information",
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
               ),
             ),
 
             // TextField
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
                   color: Colors.white,
                   padding: const EdgeInsets.all(20),
                   width: double.infinity,
-                  height: 500,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AccountCard(
                         controller: _nameController,
@@ -52,7 +57,7 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
                       AccountCard(
                         controller: _usernameController,
                         hintText: "Sample Username",
-                        labelText: "Name:",
+                        labelText: "Username:",
                       ),
                       AccountCard(
                         controller: _emailController,
@@ -64,14 +69,13 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
                         hintText: "password",
                         labelText: "Password:",
                       ),
-                      Center(
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(horizontal: 50),
-                          ),
-                          onPressed: () {},
-                          child: Text("Save"),
+                      SubmitCard(
+                        buttonText: "Save",
+                        onTap: () => Get.to(
+                          SettingsScreen(),
                         ),
+                        colorButton: Colors.black,
+                        colorText: Colors.white,
                       ),
                     ],
                   ),

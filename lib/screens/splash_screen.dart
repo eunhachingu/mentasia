@@ -3,10 +3,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-import '../../constants/image_strings.dart';
-import '../../controllers/splash_screen_controller.dart';
-import '../home_screen.dart';
+import '../constants/image_strings.dart';
+import '../controllers/splash_screen_controller.dart';
+import 'home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
@@ -16,10 +15,10 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     splashController.startAnimation();
-    return Scaffold(
-      backgroundColor: Color(0xFF429191),
-      body: SafeArea(
-        child: Center(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xFF429191),
+        body: Center(
           child: Stack(
             alignment: Alignment.center,
             // ignore: prefer_const_literals_to_create_immutables
@@ -44,12 +43,7 @@ class SplashScreen extends StatelessWidget {
                     opacity: splashController.animate.value ? 1 : 0,
                     child: Text(
                       "MENTASIA",
-                      style: GoogleFonts.barlowCondensed(
-                        fontSize: 48,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 15,
-                        color: Colors.white,
-                      ),
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ),
                 ),
@@ -63,10 +57,7 @@ class SplashScreen extends StatelessWidget {
                     opacity: splashController.animate.value ? 1 : 0,
                     child: Text(
                       "made by Rechaerg",
-                      style: GoogleFonts.barlowCondensed(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
                 ),

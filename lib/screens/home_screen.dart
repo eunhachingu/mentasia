@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentasia/screens/chat_screen.dart';
 import 'package:mentasia/screens/login/login_screen.dart';
+import 'package:mentasia/utils/submit_card.dart';
 
 import '../constants/image_strings.dart';
 import '../routing/route_generator.dart';
@@ -57,11 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Center(
                   child: Text(
                     "Welcome to Mentasia",
-                    style: GoogleFonts.barlowCondensed(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF194545),
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
 
@@ -75,17 +72,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text(
                       "Sign in to start a message",
-                      style: GoogleFonts.barlowCondensed(
-                        fontSize: 20,
-                        color: Color(0xFF429191),
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     Text(
                       "with our chatbot",
-                      style: GoogleFonts.barlowCondensed(
-                        fontSize: 20,
-                        color: Color(0xFF429191),
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ],
                 )),
@@ -95,40 +86,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 // Chat now
                 Center(
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.all(0),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20))),
-                    onPressed: () => Get.to(
+                  child: SubmitCard(
+                    buttonText: "CHAT NOW",
+                    onTap: () => Get.to(
                       ChatScreen(),
                     ),
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: Container(
-                        constraints: const BoxConstraints(
-                          maxWidth: 200,
-                          maxHeight: 40,
-                        ),
-                        alignment: Alignment.center,
-                        child: Text("CHAT NOW",
-                            style: GoogleFonts.barlow(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            )),
-                      ),
-                    ),
+                    colorButton: Colors.white,
+                    colorText: Colors.black,
                   ),
                 ),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Have an account?"),
+                    Text(
+                      "Have an account?",
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
                     TextButton(
                       onPressed: () => Get.to(
                         LoginScreen(),

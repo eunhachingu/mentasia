@@ -13,7 +13,7 @@ import '../screens/settings/settings_screen.dart';
 import '../screens/settings/support/about_us_screen.dart';
 import '../screens/settings/support/help_feedback_screen.dart';
 import '../screens/settings/support/mentasia_works_screen.dart';
-import '../screens/splash_screen/splash_screen.dart';
+import '../screens/splash_screen.dart';
 
 class RoutesClass {
   static String getSplashRoute() => RoutesList.splash;
