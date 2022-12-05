@@ -31,7 +31,11 @@ const String tChoi = "assets/images/choi.png";
 // bg
 const String tEllipseBg = "assets/images/ellipse_bg.png";
 
+<<<<<<< HEAD
 // mentasia works
+=======
+// how mentasia works
+>>>>>>> 43cfb84ad464578ae6b82f11ae1f30c423c3f754
 const String tGmail = "assets/logo/gmail-logo.png";
 const String tChat = "assets/logo/chat-logo.png";
 const String tMind = "assets/logo/mind-logo.png";

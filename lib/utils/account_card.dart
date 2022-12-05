@@ -16,7 +16,10 @@ class AccountCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(labelText),
+        Text(
+          labelText,
+          style: Theme.of(context).textTheme.labelLarge,
+        ),
         const SizedBox(
           height: 10,
         ),
@@ -38,9 +41,7 @@ class AccountCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(5.5),
             ),
           ),
-          style: TextStyle(
-            fontSize: 16,
-          ),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
         const SizedBox(
           height: 10,

@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mentasia/firebase_options.dart';
 import 'package:mentasia/routing/route_generator.dart';
 import 'package:mentasia/screens/home_screen.dart';
+import 'package:mentasia/theme/theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,10 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: RoutesClass.getSplashRoute(),
       getPages: RoutesClass.routes,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      
+      theme: TAppTheme.lightTheme,
     );
   }
 }

@@ -58,11 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Center(
                   child: Text(
                     "Welcome to Mentasia",
-                    style: GoogleFonts.barlowCondensed(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF194545),
-                    ),
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
                 ),
 
@@ -76,17 +72,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text(
                       "Sign in to start a message",
-                      style: GoogleFonts.barlowCondensed(
-                        fontSize: 20,
-                        color: Color(0xFF429191),
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     Text(
                       "with our chatbot",
-                      style: GoogleFonts.barlowCondensed(
-                        fontSize: 20,
-                        color: Color(0xFF429191),
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ],
                 )),
@@ -109,7 +99,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Have an account?"),
+                    Text(
+                      "Have an account?",
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
                     TextButton(
                       onPressed: () => Get.to(
                         LoginScreen(),

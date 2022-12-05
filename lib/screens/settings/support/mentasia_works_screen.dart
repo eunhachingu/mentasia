@@ -18,8 +18,8 @@ class _MentasiaWorksScreenState extends State<MentasiaWorksScreen> {
       body: Stack(
         // ignore: prefer_const_literals_to_create_immutables
         children: [
-          Align(
-            alignment: Alignment.topCenter,
+          // How Mentasia Works
+          Center(
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 20.0),
               child: Text(
