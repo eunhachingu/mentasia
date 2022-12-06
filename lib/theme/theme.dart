@@ -48,9 +48,14 @@ ThemeData lightTheme = ThemeData(
       color: white,
     ),
 
+    // Text
+
     bodySmall: GoogleFonts.poppins(
       fontSize: 16,
       color: black,
     ),
+
+    // Button Text
+    
   ),
 );

@@ -34,8 +34,8 @@ class SubmitCard extends StatelessWidget {
               buttonText,
               style: Theme.of(context)
                   .textTheme
-                  .labelMedium
-                  ?.copyWith(color: colorText),
+                  .bodySmall!
+                  .copyWith(color: colorText),
             ),
           ),
         ),

@@ -8,6 +8,7 @@ import 'package:mentasia/screens/settings/account_settings/personal_account_scre
 import 'package:mentasia/screens/settings/legal/terms_of_service_screen.dart';
 import 'package:mentasia/screens/settings/support/about_us_screen.dart';
 import 'package:mentasia/screens/settings/support/mentasia_works_screen.dart';
+import 'package:mentasia/theme/theme.dart';
 import 'package:mentasia/utils/submit_card.dart';
 
 import '../../constants/image_strings.dart';
@@ -183,7 +184,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   SubmitCard(
                     buttonText: "Logout",
                     onTap: () => authController.logoutUser(),
-                    colorButton: Colors.black,
+                    colorButton: Color(0xFF194545),
                     colorText: Colors.white,
                   ),
                 ],
