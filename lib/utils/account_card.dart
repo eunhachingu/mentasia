@@ -41,7 +41,7 @@ class AccountCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(5.5),
             ),
           ),
-          style: Theme.of(context).textTheme.displaySmall,
+          style: Theme.of(context).textTheme.bodySmall,
         ),
         const SizedBox(
           height: 10,

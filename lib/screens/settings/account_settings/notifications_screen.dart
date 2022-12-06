@@ -34,7 +34,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 padding: EdgeInsets.symmetric(vertical: 20.0),
                 child: Text(
                   "Notifications",
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
               ),
             ),

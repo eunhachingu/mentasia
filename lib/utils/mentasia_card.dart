@@ -24,7 +24,7 @@ class MentasiaCard extends StatelessWidget {
             Center(
               child: Text(
                 labelText,
-                style: Theme.of(context).textTheme.displaySmall,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
             ),
           ],

@@ -73,14 +73,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         children: [
                           Text(
                             "Account Name",
-                            style: Theme.of(context).textTheme.displayMedium,
+                            style: Theme.of(context).textTheme.labelLarge,
                           ),
                           const SizedBox(
                             height: 5,
                           ),
                           Text(
                             "Contact Number",
-                            style: Theme.of(context).textTheme.displaySmall,
+                            style: Theme.of(context).textTheme.labelLarge,
                           ),
                         ],
                       ),

@@ -32,7 +32,7 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
               child: Text(
                 "Personal & Account Information",
-                style: Theme.of(context).textTheme.titleMedium,
+                style: Theme.of(context).textTheme.displayLarge,
               ),
             ),
 

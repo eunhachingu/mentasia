@@ -18,7 +18,6 @@ import '../screens/splash_screen.dart';
 class RoutesClass {
   static String getSplashRoute() => RoutesList.splash;
 
-
   static List<GetPage> routes = [
     GetPage(name: RoutesList.splash, page: () => SplashScreen()),
   ];

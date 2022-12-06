@@ -72,11 +72,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text(
                       "Sign in to start a message",
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                            color: Color(0xFF429191),
+                          ),
                     ),
                     Text(
                       "with our chatbot",
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                            color: Color(0xFF429191),
+                          ),
                     ),
                   ],
                 )),
@@ -101,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text(
                       "Have an account?",
-                      style: Theme.of(context).textTheme.bodySmall,
+                      style: Theme.of(context).textTheme.labelMedium,
                     ),
                     TextButton(
                       onPressed: () => Get.to(

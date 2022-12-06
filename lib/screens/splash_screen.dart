@@ -57,7 +57,7 @@ class SplashScreen extends StatelessWidget {
                     opacity: splashController.animate.value ? 1 : 0,
                     child: Text(
                       "made by Rechaerg",
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
                   ),
                 ),

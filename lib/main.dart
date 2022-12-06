@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: RoutesClass.getSplashRoute(),
       getPages: RoutesClass.routes,
-      theme: TAppTheme.lightTheme,
+      theme: lightTheme,
     );
   }
 }
