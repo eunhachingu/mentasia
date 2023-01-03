@@ -5,7 +5,7 @@ import 'package:mentasia/screens/settings/account_settings/personal_account_scre
 import 'package:mentasia/screens/settings/legal/terms_of_service_screen.dart';
 
 import '../constants/routes_strings.dart';
-import '../screens/chat_screen.dart';
+import '../screens/chat/chat_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/login/login_screen.dart';
 import '../screens/login/signup_screen.dart';
@@ -19,6 +19,6 @@ class RoutesClass {
   static String getSplashRoute() => RoutesList.splash;
 
   static List<GetPage> routes = [
-    GetPage(name: RoutesList.splash, page: () => ChatScreen()),
+    GetPage(name: RoutesList.splash, page: () => HomeScreen()),
   ];
 }

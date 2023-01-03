@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentasia/screens/chat_screen.dart';
+import 'package:mentasia/screens/chat/chat_screen.dart';
 import 'package:mentasia/screens/login/login_screen.dart';
 import 'package:mentasia/utils/submit_card.dart';
 

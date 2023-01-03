@@ -18,6 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   AuthController authController = AuthController();
 
   @override
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(

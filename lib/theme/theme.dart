@@ -9,53 +9,5 @@ const Color black = Color(0xFF252525);
 
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
-  textTheme: TextTheme(
-    // Title Large
-    titleLarge: GoogleFonts.poppins(
-      fontSize: 48,
-      color: white,
-    ),
-
-    // Title Medium
-
-    titleMedium: GoogleFonts.poppins(
-      fontSize: 32,
-      color: darkGreen,
-    ),
-
-    // Subtitle
-
-    titleSmall: GoogleFonts.poppins(
-      fontSize: 12,
-      color: white,
-    ),
-
-    // Display Title
-    displayLarge: GoogleFonts.poppins(
-      fontSize: 20,
-      color: black,
-    ),
-
-    // Label Large
-    labelLarge: GoogleFonts.poppins(
-      fontSize: 16,
-      color: black,
-    ),
-
-    // Category
-    labelSmall: GoogleFonts.poppins(
-      fontSize: 12,
-      color: white,
-    ),
-
-    // Text
-
-    bodySmall: GoogleFonts.poppins(
-      fontSize: 16,
-      color: black,
-    ),
-
-    // Button Text
-    
-  ),
+  textTheme: TextTheme(),
 );
