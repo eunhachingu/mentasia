@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:mentasia/controllers/auth_controllers.dart';
 import 'package:mentasia/routing/route_generator.dart';
 import 'package:mentasia/screens/login/login_screen.dart';
-import 'package:mentasia/utils/reusable_form.dart';
-import 'package:mentasia/utils/submit_card.dart';
+import 'package:mentasia/utils/forms_util/reusable_form.dart';
+import 'package:mentasia/utils/forms_util/submit_card.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});

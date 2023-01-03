@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants/image_strings.dart';
-import '../../../utils/members_widget.dart';
+import '../../../utils/settings_util/members_widget.dart';
 
 class AboutUsScreen extends StatefulWidget {
   const AboutUsScreen({super.key});

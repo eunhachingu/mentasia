@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentasia/screens/chat/chat_screen.dart';
+import 'package:mentasia/screens/chat/chat_page.dart';
 import 'package:mentasia/screens/login/login_screen.dart';
-import 'package:mentasia/utils/submit_card.dart';
+import 'package:mentasia/utils/forms_util/submit_card.dart';
 
 import '../constants/image_strings.dart';
 import '../routing/route_generator.dart';
@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: SubmitCard(
                     buttonText: "CHAT NOW",
                     onTap: () => Get.to(
-                      ChatScreen(),
+                      ChatPage(),
                     ),
                     colorButton: Colors.white,
                     colorText: Colors.black,

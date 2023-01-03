@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mentasia/utils/mentasia_card.dart';
+import 'package:mentasia/utils/settings_util/mentasia_card.dart';
 
 import '../../../constants/image_strings.dart';
 

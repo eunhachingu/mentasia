@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/image_strings.dart';
+import '../../constants/image_strings.dart';
 
 class MentasiaCard extends StatelessWidget {
   final String image;

@@ -6,7 +6,7 @@ class ContactsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Contact Page"),
+      body: Center(child: Text("Contact Page")),
     );
   }
 }

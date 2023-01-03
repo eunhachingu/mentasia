@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mentasia/constants/image_strings.dart';
 import 'package:mentasia/screens/settings/settings_screen.dart';
-import 'package:mentasia/utils/submit_card.dart';
+import 'package:mentasia/utils/forms_util/submit_card.dart';
 
-import '../../../utils/account_card.dart';
+import '../../../utils/settings_util/account_card.dart';
 
 class PersonalAccountScreen extends StatefulWidget {
   const PersonalAccountScreen({super.key});
