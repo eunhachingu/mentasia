@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mentasia/api/helpers.dart';
 import 'package:mentasia/screens/chat/calls_page.dart';
 import 'package:mentasia/screens/chat/contacts_page.dart';
 import 'package:mentasia/screens/chat/notifications_page.dart';
+import 'package:mentasia/widgets/avatar.dart';
+import 'package:mentasia/widgets/icon_buttons.dart';
 
 import '../../utils/chat_util/navigation_bar_item.dart';
 import 'chat_page.dart';
@@ -48,6 +51,22 @@ class ChatMain extends StatelessWidget {
           },
         ),
         centerTitle: true,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0),
+            child: Avatar.small(url: Helpers.randomPictureUrl()),
+          ),
+        ],
+        leadingWidth: 54,
+        leading: Align(
+          alignment: Alignment.centerRight,
+          child: IconBackground(
+            icon: Icons.search,
+            onTap: () {
+              print("To do Search");
+            },
+          ),
+        ),
       ),
       body: ValueListenableBuilder(
         valueListenable: pageIndex,
