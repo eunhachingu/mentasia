@@ -1,6 +1,8 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:jiffy/jiffy.dart';
 import 'package:mentasia/api/helpers.dart';
+import 'package:mentasia/models/models.dart';
 import 'package:mentasia/widgets/avatar.dart';
 
 import '../../models/story_data.dart';
@@ -15,9 +17,134 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: _Stories(),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: _Stories(),
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              final Faker faker = Faker();
+              final date = Helpers.randomDate();
+              return _MessageTitle(
+                messageData: MessageData(
+                  senderName: faker.person.name(),
+                  message: faker.lorem.sentence(),
+                  messageDate: date,
+                  dateMessage: Jiffy(date).fromNow(),
+                  profilePicture: Helpers.randomPictureUrl(),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _MessageTitle extends StatelessWidget {
+  final MessageData messageData;
+  const _MessageTitle({super.key, required this.messageData});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        height: 100,
+        margin: EdgeInsets.symmetric(horizontal: 8.0),
+        decoration: BoxDecoration(
+            border: Border(
+          bottom: BorderSide(
+            color: Colors.grey,
+            width: 0.2,
+          ),
+        )),
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Avatar.medium(
+                  url: messageData.profilePicture,
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: Text(
+                        messageData.senderName,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          letterSpacing: 0.2,
+                          wordSpacing: 1.5,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                      child: Text(
+                        messageData.message,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      messageData.dateMessage.toUpperCase(),
+                      style: TextStyle(
+                        fontSize: 11,
+                        letterSpacing: -0.2,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    Container(
+                      width: 18,
+                      height: 18,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "1",
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Colors.grey[200],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

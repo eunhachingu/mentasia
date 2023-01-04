@@ -5,6 +5,7 @@ import 'package:mentasia/screens/chat/calls_page.dart';
 import 'package:mentasia/screens/chat/contacts_page.dart';
 import 'package:mentasia/screens/chat/notifications_page.dart';
 import 'package:mentasia/widgets/avatar.dart';
+import 'package:mentasia/widgets/glowing_action_button.dart';
 import 'package:mentasia/widgets/icon_buttons.dart';
 
 import '../../utils/chat_util/navigation_bar_item.dart';
@@ -109,42 +110,56 @@ class _BottomNavigationBarState extends State<_BottomNavigationBar> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: false,
-      bottom: true,
-      child: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            NavigationBarItem(
-              label: 'Messaging',
-              icon: CupertinoIcons.bubble_left_bubble_right_fill,
-              index: 0,
-              isSelected: (selectedIndex == 0),
-              onTap: handleItemSelected,
-            ),
-            NavigationBarItem(
-              label: 'Notifications',
-              icon: CupertinoIcons.bell_solid,
-              index: 1,
-              isSelected: (selectedIndex == 1),
-              onTap: handleItemSelected,
-            ),
-            NavigationBarItem(
-              label: 'Calls',
-              icon: CupertinoIcons.phone_fill,
-              index: 2,
-              isSelected: (selectedIndex == 2),
-              onTap: handleItemSelected,
-            ),
-            NavigationBarItem(
-              label: 'Contacts',
-              icon: CupertinoIcons.person_2_fill,
-              index: 3,
-              isSelected: (selectedIndex == 3),
-              onTap: handleItemSelected,
-            ),
-          ],
+    return Card(
+      elevation: 0,
+      margin: EdgeInsets.zero,
+      child: SafeArea(
+        top: false,
+        bottom: true,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 16, left: 8, right: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              NavigationBarItem(
+                label: 'Messaging',
+                icon: CupertinoIcons.bubble_left_bubble_right_fill,
+                index: 0,
+                isSelected: (selectedIndex == 0),
+                onTap: handleItemSelected,
+              ),
+              NavigationBarItem(
+                label: 'Notifications',
+                icon: CupertinoIcons.bell_solid,
+                index: 1,
+                isSelected: (selectedIndex == 1),
+                onTap: handleItemSelected,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 5),
+                child: GlowingActionButton(
+                  color: Colors.blueAccent,
+                  icon: CupertinoIcons.add,
+                  onPressed: () {},
+                ),
+              ),
+              NavigationBarItem(
+                label: 'Calls',
+                icon: CupertinoIcons.phone_fill,
+                index: 2,
+                isSelected: (selectedIndex == 2),
+                onTap: handleItemSelected,
+              ),
+              NavigationBarItem(
+                label: 'Contacts',
+                icon: CupertinoIcons.person_2_fill,
+                index: 3,
+                isSelected: (selectedIndex == 3),
+                onTap: handleItemSelected,
+              ),
+            ],
+          ),
         ),
       ),
     );
