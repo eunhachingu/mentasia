@@ -25,3 +25,34 @@ class IconBackground extends StatelessWidget {
     );
   }
 }
+
+class IconBorder extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback onTap;
+  const IconBorder({super.key, required this.icon, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(6.0),
+      splashColor: Colors.grey,
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6),
+          border: Border.all(
+            width: 2,
+            color: Colors.grey.shade300,
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(4),
+          child: Icon(
+            icon,
+            size: 16,
+          ),
+        ),
+      ),
+    );
+  }
+}

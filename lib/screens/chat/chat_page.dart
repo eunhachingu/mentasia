@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:mentasia/api/helpers.dart';
 import 'package:mentasia/models/models.dart';
+import 'package:mentasia/screens/chat-screen/chat_screen.dart';
 import 'package:mentasia/widgets/avatar.dart';
 
 import '../../models/story_data.dart';
@@ -51,7 +52,9 @@ class _MessageTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(ChatScreen.route(messageData));
+      },
       child: Container(
         height: 100,
         margin: EdgeInsets.symmetric(horizontal: 8.0),
