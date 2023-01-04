@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mentasia/api/helpers.dart';
 import 'package:mentasia/screens/chat/calls_page.dart';
 import 'package:mentasia/screens/chat/contacts_page.dart';
 import 'package:mentasia/screens/chat/notifications_page.dart';
+import 'package:mentasia/screens/settings/settings_screen.dart';
 import 'package:mentasia/widgets/avatar.dart';
 import 'package:mentasia/widgets/glowing_action_button.dart';
 import 'package:mentasia/widgets/icon_buttons.dart';
@@ -55,7 +57,9 @@ class ChatMain extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 24.0),
-            child: Avatar.small(url: Helpers.randomPictureUrl()),
+            child: InkWell(
+                onTap: () => Get.to(SettingsScreen()),
+                child: Avatar.small(url: Helpers.randomPictureUrl())),
           ),
         ],
         leadingWidth: 54,

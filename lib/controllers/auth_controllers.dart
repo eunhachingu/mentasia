@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:mentasia/screens/chat/chat_main.dart';
 import 'package:mentasia/screens/chat/chat_page.dart';
 import 'package:mentasia/screens/home_screen.dart';
 import 'package:mentasia/screens/login/login_screen.dart';
@@ -35,7 +36,7 @@ class AuthController extends GetxController {
       },
     );
     if (user != null) {
-      Get.to(ChatPage());
+      Get.to(LoginScreen());
     } else {
       print("Error");
     }
@@ -51,7 +52,7 @@ class AuthController extends GetxController {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setString("userID", user.user!.uid);
       print(user.user!.uid);
-      Get.to(ChatPage());
+      Get.to(ChatMain());
     } else {
       print("error");
     }

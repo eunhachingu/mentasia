@@ -41,9 +41,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           horizontal: 30, vertical: 10),
                       alignment: Alignment.centerRight,
                       child: InkWell(
-                        onTap: () => Get.to(
-                          ChatPage(),
-                        ),
+                        onTap: () => Get.back(),
                         child: const Image(
                           image: AssetImage(tCancel),
                         ),
