@@ -50,6 +50,7 @@ dependencies:
   cached_network_image: ^3.2.3
   faker: ^2.1.0
   jiffy: ^5.0.0
+  dialog_flowtter: ^0.3.3
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +77,7 @@ flutter:
   assets:
     - assets/images/
     - assets/logo/
+    - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

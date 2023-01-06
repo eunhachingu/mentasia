@@ -1,21 +1,43 @@
+import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mentasia/main.dart';
 import 'package:mentasia/models/models.dart';
+import 'package:mentasia/screens/chat-screen/message_screen.dart';
 import 'package:mentasia/widgets/avatar.dart';
 import 'package:mentasia/widgets/glowing_action_button.dart';
 import 'package:mentasia/widgets/icon_buttons.dart';
 
-class ChatScreen extends StatelessWidget {
+import '../../utils/chat_util/action_bottom.dart';
+
+class ChatScreen extends StatefulWidget {
   static Route route(MessageData data) => MaterialPageRoute(
         builder: (context) => ChatScreen(messageData: data),
       );
 
   final MessageData messageData;
-  const ChatScreen({
+  ChatScreen({
     super.key,
     required this.messageData,
   });
+
+  @override
+  State<ChatScreen> createState() => _ChatScreenState();
+}
+
+class _ChatScreenState extends State<ChatScreen> {
+  late DialogFlowtter dialogFlowtter;
+  final TextEditingController _controller = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    DialogFlowtter.fromFile().then((instance) => dialogFlowtter = instance);
+
+    super.initState();
+  }
+
+  List<Map<String, dynamic>> messages = [];
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +58,7 @@ class ChatScreen extends StatelessWidget {
           ),
         ),
         title: _AppBarTitle(
-          messageData: messageData,
+          messageData: widget.messageData,
         ),
         actions: [
           Padding(
@@ -59,41 +81,54 @@ class ChatScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: _DemoMessageList(),
-          ),
-          _ActionBar(),
-        ],
+      body: Container(
+        child: Column(
+          children: [
+            Expanded(
+              child: MessagesScreen(
+                messages: messages,
+              ),
+            ),
+            ActionBar(
+              onPressed: () {
+                sendMessage(_controller.text);
+                _controller.clear();
+              },
+              messageController: _controller,
+            ),
+          ],
+        ),
       ),
     );
   }
-}
 
-class _DemoMessageList extends StatelessWidget {
-  const _DemoMessageList({super.key});
+  sendMessage(String text) async {
+    if (text.isEmpty) {
+      print("Message is Empty");
+    } else {
+      setState(() {
+        addMessage(
+          Message(text: DialogText(text: [text])),
+          true,
+        );
+      });
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: ListView(
-        children: [
-          _DateLabel(label: "Yesterday"),
-          _MessageTile(
-              message: "Hi, Lucy! How's your day going?",
-              messageDate: "12:01pm"),
-          _MessageOwnTile(
-              message: "You know how it goes", messageDate: "12:02pm"),
-          _MessageTile(
-              message: "Do you want Starbucks?", messageDate: "12:02pm"),
-          _MessageOwnTile(message: "Would be awesome!", messageDate: "12:02pm"),
-          _MessageTile(message: "Coming up!", messageDate: "12:03pm"),
-          _MessageOwnTile(message: "YAYYY!!!", messageDate: "12:03pm"),
-        ],
-      ),
-    );
+      DetectIntentResponse response = await dialogFlowtter.detectIntent(
+          queryInput: QueryInput(
+        text: TextInput(text: text),
+      ));
+      if (response.message == null) return;
+      setState(() {
+        addMessage(response.message!);
+      });
+    }
+  }
+
+  addMessage(Message message, [bool isUserMessage = false]) {
+    messages.add({
+      'message': message.text?.text![0],
+      'isUserMessage': isUserMessage,
+    });
   }
 }
 
@@ -267,62 +302,6 @@ class _DateLabel extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _ActionBar extends StatelessWidget {
-  const _ActionBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      bottom: true,
-      top: false,
-      child: Row(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              border: Border(
-                right: BorderSide(
-                  width: 2,
-                  color: Colors.grey,
-                ),
-              ),
-            ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: Icon(
-                CupertinoIcons.camera_fill,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(left: 16.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "Type something...",
-                  border: InputBorder.none,
-                ),
-                style: TextStyle(
-                  fontSize: 14,
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 12.0, right: 24.0),
-            child: GlowingActionButton(
-              color: Colors.greenAccent,
-              icon: Icons.send_rounded,
-              onPressed: () {
-                print("TODO: send a message");
-              },
-            ),
-          ),
-        ],
       ),
     );
   }
