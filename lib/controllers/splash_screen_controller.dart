@@ -6,6 +6,7 @@ import 'package:mentasia/screens/login/login_screen.dart';
 import 'package:mentasia/screens/login/signup_screen.dart';
 import 'package:mentasia/screens/settings/legal/terms_of_service_screen.dart';
 import 'package:mentasia/screens/settings/settings_screen.dart';
+import 'package:mentasia/screens/settings/support/about_us_screen.dart';
 import 'package:mentasia/screens/settings/support/mentasia_works_screen.dart';
 import 'package:mentasia/screens/splash_screen.dart';
 
@@ -23,7 +24,7 @@ class SplashScreenController extends GetxController {
     animate.value = true;
     await Future.delayed(Duration(milliseconds: 3000));
     // ignore: use_build_context_synchronously
-    Get.to(ChatMain());
+    Get.to(HomeScreen());
     // Navigator.pushReplacement(
     //     context, MaterialPageRoute(builder: (context) => rconst AppHome()));
   }

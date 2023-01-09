@@ -20,6 +20,7 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFF429191),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
@@ -40,9 +41,9 @@ class _SignupScreenState extends State<SignupScreen> {
                 height: 20,
               ),
               SubmitCard(
+                colorButton: Color(0xFF194545),
                 buttonText: "Sign Up",
                 onTap: () => authController.createAccount(),
-                colorButton: Colors.green,
               ),
               SizedBox(
                 height: 10,
@@ -55,7 +56,12 @@ class _SignupScreenState extends State<SignupScreen> {
                     onPressed: () => Get.to(
                       LoginScreen(),
                     ),
-                    child: Text("Login"),
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        color: Colors.black87,
+                      ),
+                    ),
                   ),
                 ],
               ),

@@ -51,7 +51,10 @@ class SettingsButton extends StatelessWidget {
               ),
               Text(
                 textLabel,
-                style: Theme.of(context).textTheme.labelSmall,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
               ),
             ],
           ),

@@ -16,6 +16,7 @@ class MentasiaCard extends StatelessWidget {
         padding: EdgeInsets.all(5),
         color: Colors.grey[300],
         width: 250,
+        height: 120,
         child: Column(
           children: [
             Image(
@@ -24,7 +25,6 @@ class MentasiaCard extends StatelessWidget {
             Center(
               child: Text(
                 labelText,
-                style: Theme.of(context).textTheme.bodySmall,
               ),
             ),
           ],

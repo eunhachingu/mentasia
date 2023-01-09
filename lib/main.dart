@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mentasia/constants/colors.dart';
 import 'package:mentasia/firebase_options.dart';
 import 'package:mentasia/routing/route_generator.dart';
 import 'package:mentasia/screens/home_screen.dart';

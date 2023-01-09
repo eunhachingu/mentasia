@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mentasia/screens/chat/chat_main.dart';
 import 'package:mentasia/screens/chat/chat_page.dart';
 import 'package:mentasia/screens/login/login_screen.dart';
 import 'package:mentasia/utils/forms_util/submit_card.dart';
@@ -58,7 +59,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 Center(
                   child: Text(
                     "Welcome to Mentasia",
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: GoogleFonts.barlowCondensed(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
 
@@ -72,15 +76,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text(
                       "Sign in to start a message",
-                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                            color: Color(0xFF429191),
-                          ),
+                      style: TextStyle(
+                        color: Color(0xFF429191),
+                      ),
                     ),
                     Text(
                       "with our chatbot",
-                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                            color: Color(0xFF429191),
-                          ),
+                      style: TextStyle(
+                        color: Color(0xFF429191),
+                      ),
                     ),
                   ],
                 )),
@@ -93,10 +97,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: SubmitCard(
                     buttonText: "CHAT NOW",
                     onTap: () => Get.to(
-                      ChatPage(),
+                      ChatMain(),
                     ),
-                    colorButton: Colors.white,
-                    colorText: Colors.black,
+                    colorButton: Color(0xFF429191),
                   ),
                 ),
 
@@ -104,8 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Have an account?",
-                      style: Theme.of(context).textTheme.labelMedium,
+                      "Already have an account?",
                     ),
                     TextButton(
                       onPressed: () => Get.to(

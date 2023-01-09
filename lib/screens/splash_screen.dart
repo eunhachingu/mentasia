@@ -43,7 +43,10 @@ class SplashScreen extends StatelessWidget {
                     opacity: splashController.animate.value ? 1 : 0,
                     child: Text(
                       "MENTASIA",
-                      style: Theme.of(context).textTheme.titleLarge,
+                      style: GoogleFonts.barlowCondensed(
+                        fontSize: 60,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -57,7 +60,9 @@ class SplashScreen extends StatelessWidget {
                     opacity: splashController.animate.value ? 1 : 0,
                     child: Text(
                       "made by Rechaerg",
-                      style: Theme.of(context).textTheme.titleSmall,
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

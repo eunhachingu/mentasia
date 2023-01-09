@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mentasia/constants/image_strings.dart';
 import 'package:mentasia/screens/settings/settings_screen.dart';
+import 'package:mentasia/utils/forms_util/reusable_form.dart';
 import 'package:mentasia/utils/forms_util/submit_card.dart';
 
 import '../../../utils/settings_util/account_card.dart';
@@ -30,9 +32,14 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
             // Personal & Account Information
             Padding(
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
-              child: Text(
-                "Personal & Account Information",
-                style: Theme.of(context).textTheme.displayLarge,
+              child: Center(
+                child: Text(
+                  "Personal & Account Information",
+                  style: GoogleFonts.barlow(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
 
@@ -46,26 +53,20 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
                   padding: const EdgeInsets.all(20),
                   width: double.infinity,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      AccountCard(
-                        controller: _nameController,
-                        hintText: "Sample X. Name",
-                        labelText: "Name:",
-                      ),
-                      AccountCard(
+                      ReusableForm(
                         controller: _usernameController,
-                        hintText: "Sample Username",
                         labelText: "Username:",
                       ),
-                      AccountCard(
-                        controller: _emailController,
-                        hintText: "sample99@email.com",
-                        labelText: "Email:",
+                      SizedBox(
+                        height: 10,
                       ),
-                      AccountCard(
-                        controller: _passwordController,
-                        hintText: "password",
-                        labelText: "Password:",
+                      SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
+                        height: 10,
                       ),
                       SubmitCard(
                         buttonText: "Save",

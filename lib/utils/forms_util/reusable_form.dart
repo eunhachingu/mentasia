@@ -12,19 +12,27 @@ class ReusableForm extends StatelessWidget {
     return TextFormField(
       controller: controller,
       decoration: InputDecoration(
-        labelText: labelText,
+        fillColor: Color(0xFF194545),
+        filled: true,
+        hintText: labelText,
+        hintStyle: TextStyle(
+          color: Colors.white,
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
-            color: Colors.grey,
+            color: Colors.black26,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
-            color: Colors.grey,
+            color: Colors.black26,
           ),
         ),
+      ),
+      style: TextStyle(
+        color: Colors.white,
       ),
     );
   }

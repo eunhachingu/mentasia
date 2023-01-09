@@ -20,6 +20,6 @@ class RoutesClass {
   static String getSplashRoute() => RoutesList.splash;
 
   static List<GetPage> routes = [
-    GetPage(name: RoutesList.splash, page: () => ChatMain()),
+    GetPage(name: RoutesList.splash, page: () => SplashScreen()),
   ];
 }

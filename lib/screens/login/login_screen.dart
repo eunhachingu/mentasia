@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mentasia/constants/image_strings.dart';
 import 'package:mentasia/controllers/auth_controllers.dart';
 import 'package:mentasia/routing/route_generator.dart';
@@ -22,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFF429191),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
@@ -33,7 +35,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Text("Welcome back"),
+                child: Text(
+                  "Welcome back!",
+                  style: GoogleFonts.barlowCondensed(
+                    fontSize: 25,
+                  ),
+                ),
               ),
               ReusableForm(
                   labelText: "Email",
@@ -42,23 +49,34 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 20,
               ),
               ReusableForm(
-                  labelText: "Password",
-                  controller: authController.loginPasswordController),
+                labelText: "Password",
+                controller: authController.loginPasswordController,
+              ),
               SizedBox(
                 height: 10,
               ),
               SubmitCard(
-                colorButton: Colors.green,
+                colorButton: Color(0xFF194545),
                 buttonText: "Login",
                 onTap: () => authController.loginUser(),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don't have an account?"),
+                  Text(
+                    "Don't have an account?",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                   TextButton(
                     onPressed: () => Get.to(SignupScreen()),
-                    child: Text("Sign up"),
+                    child: Text(
+                      "Sign up",
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
                   ),
                 ],
               ),

@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mentasia/controllers/auth_controllers.dart';
@@ -22,11 +24,14 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  final String? accountName = FirebaseAuth.instance.currentUser?.email;
+
   AuthController authController = AuthController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xFFBFD9D8),
         resizeToAvoidBottomInset: true,
         body: SafeArea(
           child: ListView.builder(
@@ -71,15 +76,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         // ignore: prefer_const_literals_to_create_immutables
                         children: [
                           Text(
-                            "Account Name",
-                            style: Theme.of(context).textTheme.labelLarge,
+                            "Account Name: ${accountName}",
                           ),
                           const SizedBox(
                             height: 5,
                           ),
                           Text(
-                            "Contact Number",
-                            style: Theme.of(context).textTheme.labelLarge,
+                            "Contact Number:",
                           ),
                         ],
                       ),
@@ -92,7 +95,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
                     child: Text(
                       "Account Settings",
-                      style: Theme.of(context).textTheme.labelLarge,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
 
@@ -108,13 +114,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     height: 5,
                   ),
 
-                  SettingsButton(
-                    textLabel: "Notification",
-                    imageString: tNotification,
-                    onTap: () => Get.to(
-                      NotificationsScreen(),
-                    ),
-                  ),
+                  // SettingsButton(
+                  //   textLabel: "Notification",
+                  //   imageString: tNotification,
+                  //   onTap: () => Get.to(
+                  //     NotificationsScreen(),
+                  //   ),
+                  // ),
 
                   // Support
                   Padding(
@@ -122,7 +128,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         EdgeInsets.symmetric(horizontal: 30.0, vertical: 5),
                     child: Text(
                       "Support",
-                      style: Theme.of(context).textTheme.labelLarge,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
 
@@ -163,7 +172,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         EdgeInsets.symmetric(horizontal: 30.0, vertical: 5),
                     child: Text(
                       "Legal",
-                      style: Theme.of(context).textTheme.labelLarge,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
 

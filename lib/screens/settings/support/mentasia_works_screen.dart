@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mentasia/utils/settings_util/mentasia_card.dart';
 
 import '../../../constants/image_strings.dart';
@@ -23,7 +24,10 @@ class _MentasiaWorksScreenState extends State<MentasiaWorksScreen> {
           Center(
             child: Text(
               "How Mentasia Works",
-              style: Theme.of(context).textTheme.titleMedium,
+              style: GoogleFonts.barlow(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           SizedBox(
@@ -46,7 +50,7 @@ class _MentasiaWorksScreenState extends State<MentasiaWorksScreen> {
           MentasiaCard(
               image: tMind,
               labelText:
-                  "Comppassionate Interlocutor. Contact to professional."),
+                  "Compassionate Interlocutor. Contact to professional."),
           SizedBox(
             height: 50,
           ),

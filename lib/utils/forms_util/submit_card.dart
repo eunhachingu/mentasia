@@ -28,14 +28,19 @@ class SubmitCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: colorButton,
             borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: Colors.black26,
+              width: 3,
+            ),
           ),
           child: Center(
             child: Text(
               buttonText,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall!
-                  .copyWith(color: colorText),
+              style: GoogleFonts.barlow(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ),
         ),

@@ -6,8 +6,3 @@ const Color lightGreen = Color(0xFF429191);
 const Color lighterGreen = Color(0xFFBFD9D8);
 const Color white = Color(0xFFEEEEEE);
 const Color black = Color(0xFF252525);
-
-ThemeData lightTheme = ThemeData(
-  brightness: Brightness.light,
-  textTheme: TextTheme(),
-);
