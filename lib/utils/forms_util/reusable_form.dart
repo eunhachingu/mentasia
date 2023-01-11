@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class ReusableForm extends StatelessWidget {
   final String labelText;
   final TextEditingController controller;
-  final bool obscureText = true;
+  final bool obscureText;
 
   const ReusableForm(
       {super.key,
       required this.labelText,
       required this.controller,
-      obscureText = true});
+      required this.obscureText});
 
   @override
   Widget build(BuildContext context) {

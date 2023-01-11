@@ -31,7 +31,7 @@ class _SignupScreenState extends State<SignupScreen> {
               ReusableForm(
                 labelText: "Email",
                 controller: authController.emailController,
-                obscureText: true,
+                obscureText: false,
               ),
               SizedBox(
                 height: 20,
@@ -39,7 +39,7 @@ class _SignupScreenState extends State<SignupScreen> {
               ReusableForm(
                 labelText: "Password",
                 controller: authController.passwordController,
-                obscureText: false,
+                obscureText: true,
               ),
               SizedBox(
                 height: 20,
