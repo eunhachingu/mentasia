@@ -43,8 +43,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               ReusableForm(
-                  labelText: "Email",
-                  controller: authController.loginEmailController),
+                labelText: "Email",
+                controller: authController.loginEmailController,
+                obscureText: true,
+              ),
               SizedBox(
                 height: 20,
               ),
