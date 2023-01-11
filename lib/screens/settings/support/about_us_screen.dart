@@ -72,7 +72,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                 ),
                 // ignore: prefer_const_constructors
                 child: Text(
-                  "\t\t\t\t\t\tReCHAERG is a group of developers formed through a project in their Enterprise Software System Course under Computer Engineering Program at the Polytechnic University of the Philippines. They are formed to create a website that will help people dealing with mental health.",
+                  "              ReCHAERG is a group of developers formed through a project in their Enterprise Software System Course under Computer Engineering Program at the Polytechnic University of the Philippines. They are formed to create a website that will help people dealing with mental health.",
                   style: TextStyle(
                     letterSpacing: 2.0,
                     fontSize: 12,

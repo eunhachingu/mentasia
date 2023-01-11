@@ -3,14 +3,19 @@ import 'package:flutter/material.dart';
 class ReusableForm extends StatelessWidget {
   final String labelText;
   final TextEditingController controller;
+  final bool obscureText = true;
 
   const ReusableForm(
-      {super.key, required this.labelText, required this.controller});
+      {super.key,
+      required this.labelText,
+      required this.controller,
+      obscureText = true});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      obscureText: obscureText,
       decoration: InputDecoration(
         fillColor: Color(0xFF194545),
         filled: true,
