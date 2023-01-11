@@ -29,14 +29,18 @@ class _SignupScreenState extends State<SignupScreen> {
               Text("Hi! Let us set you an account"),
               SizedBox(height: 20),
               ReusableForm(
-                  labelText: "Email",
-                  controller: authController.emailController),
+                labelText: "Email",
+                controller: authController.emailController,
+                obscureText: true,
+              ),
               SizedBox(
                 height: 20,
               ),
               ReusableForm(
-                  labelText: "Password",
-                  controller: authController.passwordController),
+                labelText: "Password",
+                controller: authController.passwordController,
+                obscureText: false,
+              ),
               SizedBox(
                 height: 20,
               ),
