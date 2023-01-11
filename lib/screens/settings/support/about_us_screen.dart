@@ -44,10 +44,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                       EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
                   child: Text(
                     "About Us",
-                    style: GoogleFonts.barlow(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    
                   ),
                 ),
               ),
