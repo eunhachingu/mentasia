@@ -51,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ReusableForm(
                 labelText: "Password",
                 controller: authController.loginPasswordController,
+                
               ),
               SizedBox(
                 height: 10,
