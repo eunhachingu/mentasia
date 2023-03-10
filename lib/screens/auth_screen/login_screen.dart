@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mentasia/constants/colors.dart';
 import 'package:mentasia/constants/image_strings.dart';
 import 'package:mentasia/controllers/auth_controllers.dart';
-import 'package:mentasia/routing/route_generator.dart';
-import 'package:mentasia/screens/login/signup_screen.dart';
+import 'package:mentasia/screens/auth_screen/signup_screen.dart';
+import 'package:mentasia/screens/chat/chat_main.dart';
 import 'package:mentasia/utils/forms_util/reusable_form.dart';
 import 'package:mentasia/utils/forms_util/submit_card.dart';
 
+import '../../controllers/auth.dart';
+
 class LoginScreen extends StatefulWidget {
+  static String route = "loginScreen";
   const LoginScreen({super.key});
 
   @override
@@ -16,14 +20,20 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  AuthController authController = AuthController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
 
-  @override
+  void loginUser() async {
+    await Auth().loginUser(
+        _emailController.text.trim(), _passwordController.text.trim());
+
+    Navigator.pushNamed(context, ChatMain.route);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF429191),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
@@ -34,25 +44,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 image: AssetImage(tSplashIcon),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                padding: EdgeInsets.symmetric(vertical: 20.0),
                 child: Text(
                   "Welcome back!",
-                  style: GoogleFonts.barlowCondensed(
+                  style: TextStyle(
+                    color: tBlackColor,
                     fontSize: 25,
                   ),
                 ),
               ),
               ReusableForm(
                 labelText: "Email",
-                controller: authController.loginEmailController,
-                obscureText: false,
+                controller: _emailController,
               ),
               SizedBox(
                 height: 20,
               ),
               ReusableForm(
                 labelText: "Password",
-                controller: authController.loginPasswordController,
+                controller: _passwordController,
                 obscureText: true,
               ),
               SizedBox(
@@ -61,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SubmitCard(
                 colorButton: Color(0xFF194545),
                 buttonText: "Login",
-                onTap: () => authController.loginUser(),
+                onTap: loginUser,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +83,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () => Get.to(SignupScreen()),
+                    onPressed: () =>
+                        Navigator.pushNamed(context, SignupScreen.route),
                     child: Text(
                       "Sign up",
                       style: TextStyle(

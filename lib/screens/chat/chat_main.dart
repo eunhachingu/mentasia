@@ -6,14 +6,15 @@ import 'package:mentasia/screens/chat/calls_page.dart';
 import 'package:mentasia/screens/chat/contacts_page.dart';
 import 'package:mentasia/screens/chat/notifications_page.dart';
 import 'package:mentasia/screens/settings/settings_screen.dart';
-import 'package:mentasia/widgets/avatar.dart';
-import 'package:mentasia/widgets/glowing_action_button.dart';
-import 'package:mentasia/widgets/icon_buttons.dart';
+import 'package:mentasia/utils/avatar.dart';
+import 'package:mentasia/utils/glowing_action_button.dart';
+import 'package:mentasia/utils/icon_buttons.dart';
 
 import '../../utils/chat_util/navigation_bar_item.dart';
 import 'chat_page.dart';
 
 class ChatMain extends StatelessWidget {
+  static String route = "chatMain";
   final ValueNotifier<int> pageIndex = ValueNotifier(0);
   final ValueNotifier<String> title = ValueNotifier('Messages');
   ChatMain({super.key});

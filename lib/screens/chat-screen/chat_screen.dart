@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:mentasia/main.dart';
 import 'package:mentasia/models/models.dart';
 import 'package:mentasia/screens/chat-screen/message_screen.dart';
-import 'package:mentasia/widgets/avatar.dart';
-import 'package:mentasia/widgets/glowing_action_button.dart';
-import 'package:mentasia/widgets/icon_buttons.dart';
+import 'package:mentasia/utils/avatar.dart';
+import 'package:mentasia/utils/glowing_action_button.dart';
+import 'package:mentasia/utils/icon_buttons.dart';
 
 import '../../utils/chat_util/action_bottom.dart';
 

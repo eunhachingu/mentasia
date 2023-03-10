@@ -4,12 +4,15 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mentasia/constants/colors.dart';
 import 'package:mentasia/firebase_options.dart';
-import 'package:mentasia/routing/route_generator.dart';
-import 'package:mentasia/screens/home_screen.dart';
-import 'package:mentasia/theme/theme.dart';
+import 'package:mentasia/routing/router.dart';
+import 'package:mentasia/screens/wrapper/home_screen.dart';
+import 'package:mentasia/screens/splash_screen/splash_screen.dart';
+import 'package:mentasia/screens/wrapper/wrapper.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // initializing firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -23,10 +26,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: RoutesClass.getSplashRoute(),
-      getPages: RoutesClass.routes,
+      theme: ThemeData(
+        fontFamily: "Helvetica",
+        scaffoldBackgroundColor: tPrimaryColor,
+      ),
+      initialRoute: SplashScreen.route,
+      routes: getRoutes(),
     );
   }
 }

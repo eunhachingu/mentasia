@@ -4,11 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:mentasia/screens/chat/chat_main.dart';
 import 'package:mentasia/screens/chat/chat_page.dart';
-import 'package:mentasia/screens/home_screen.dart';
-import 'package:mentasia/screens/login/login_screen.dart';
+import 'package:mentasia/screens/wrapper/home_screen.dart';
+import 'package:mentasia/screens/auth_screen/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../routing/route_generator.dart';
 
 class AuthController extends GetxController {
   // sign up text editing controllers
