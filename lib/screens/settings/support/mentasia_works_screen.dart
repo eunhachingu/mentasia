@@ -5,6 +5,7 @@ import 'package:mentasia/utils/settings_util/mentasia_card.dart';
 import '../../../constants/image_strings.dart';
 
 class MentasiaWorksScreen extends StatefulWidget {
+  static String route = "mentasiaWorkScreen";
   const MentasiaWorksScreen({super.key});
 
   @override

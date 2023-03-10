@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mentasia/constants/colors.dart';
 
 class SubmitCard extends StatelessWidget {
   final String buttonText;
@@ -30,8 +31,14 @@ class SubmitCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
               color: Colors.black26,
-              width: 3,
+              width: 2,
             ),
+            boxShadow: const [
+              BoxShadow(
+                color: tBlackColor,
+                offset: Offset(0, 3),
+              ),
+            ],
           ),
           child: Center(
             child: Text(

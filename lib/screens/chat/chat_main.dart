@@ -40,7 +40,7 @@ class ChatMain extends StatelessWidget {
     });
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
         title: ValueListenableBuilder(
           valueListenable: title,
@@ -59,8 +59,11 @@ class ChatMain extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 24.0),
             child: InkWell(
-                onTap: () => Get.to(SettingsScreen()),
-                child: Avatar.small(url: Helpers.randomPictureUrl())),
+              onTap: () => Navigator.pushNamed(context, SettingsScreen.route),
+              child: Avatar.small(
+                url: Helpers.randomPictureUrl(),
+              ),
+            ),
           ),
         ],
         leadingWidth: 54,

@@ -5,6 +5,7 @@ import '../../../constants/image_strings.dart';
 import '../../../utils/settings_util/members_widget.dart';
 
 class AboutUsScreen extends StatefulWidget {
+  static String route = "aboutUsScreen";
   const AboutUsScreen({super.key});
 
   @override
@@ -44,7 +45,6 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                       EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
                   child: Text(
                     "About Us",
-                    
                   ),
                 ),
               ),

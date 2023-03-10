@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HelpFeedbackScreen extends StatefulWidget {
+  static String route = "helpFeedbackScreen";
   const HelpFeedbackScreen({super.key});
 
   @override

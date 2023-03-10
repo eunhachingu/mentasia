@@ -9,6 +9,7 @@ import 'package:mentasia/utils/forms_util/submit_card.dart';
 import '../../../utils/settings_util/account_card.dart';
 
 class PersonalAccountScreen extends StatefulWidget {
+  static String route = "personalScreen";
   const PersonalAccountScreen({super.key});
 
   @override
