@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TermsOfServiceScreen extends StatelessWidget {
+  static String route = "termsOfServiceScreen";
   const TermsOfServiceScreen({super.key});
 
   @override

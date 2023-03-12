@@ -30,7 +30,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: "Helvetica",
-        scaffoldBackgroundColor: tPrimaryColor,
+        scaffoldBackgroundColor: tBgColor,
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          backgroundColor: tPrimaryColor,
+        ),
       ),
       initialRoute: SplashScreen.route,
       routes: getRoutes(),

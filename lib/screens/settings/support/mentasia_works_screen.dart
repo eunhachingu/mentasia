@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mentasia/utils/settings_util/mentasia_card.dart';
 
 import '../../../constants/image_strings.dart';
 
 class MentasiaWorksScreen extends StatefulWidget {
+  static String route = "mentasiaWorkScreen";
   const MentasiaWorksScreen({super.key});
 
   @override
@@ -12,6 +12,23 @@ class MentasiaWorksScreen extends StatefulWidget {
 }
 
 class _MentasiaWorksScreenState extends State<MentasiaWorksScreen> {
+  List<Step> getSteps() => [
+        Step(
+          title: Text("Account"),
+          content: Container(),
+        ),
+        Step(
+          title: Text("Address"),
+          content: Container(),
+        ),
+        Step(
+          title: Text("Complete"),
+          content: Container(),
+        ),
+      ];
+
+  int currentStep = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,37 +41,50 @@ class _MentasiaWorksScreenState extends State<MentasiaWorksScreen> {
           Center(
             child: Text(
               "How Mentasia Works",
-              style: GoogleFonts.barlow(
+              style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          SizedBox(
-            height: 50,
-          ),
-          MentasiaCard(
-              image: tGmail,
-              labelText:
-                  "Sign in using Google or Facebook.To optimized your personal experienced"),
-          SizedBox(
-            height: 50,
-          ),
-          MentasiaCard(
-              image: tChat,
-              labelText:
-                  "Chat with our chatbot. The bot will provide your needs."),
-          SizedBox(
-            height: 50,
-          ),
-          MentasiaCard(
-              image: tMind,
-              labelText:
-                  "Compassionate Interlocutor. Contact to professional."),
-          SizedBox(
-            height: 50,
+          Stepper(
+            type: StepperType.vertical,
+            steps: getSteps(),
+            currentStep: currentStep,
           ),
         ],
+      ),
+    );
+  }
+}
+
+class MentasiaCard extends StatelessWidget {
+  final String image;
+  final String labelText;
+
+  const MentasiaCard({super.key, required this.image, required this.labelText});
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+        padding: EdgeInsets.all(5),
+        color: Colors.grey[300],
+        width: 250,
+        height: 120,
+        child: Column(
+          children: [
+            Image(
+              image: AssetImage(image),
+            ),
+            Center(
+              child: Text(
+                labelText,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

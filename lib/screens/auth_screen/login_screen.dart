@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:mentasia/constants/colors.dart';
 import 'package:mentasia/constants/image_strings.dart';
-import 'package:mentasia/controllers/auth_controllers.dart';
 import 'package:mentasia/screens/auth_screen/signup_screen.dart';
 import 'package:mentasia/screens/chat/chat_main.dart';
 import 'package:mentasia/utils/forms_util/reusable_form.dart';

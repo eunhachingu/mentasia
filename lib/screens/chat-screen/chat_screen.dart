@@ -8,6 +8,7 @@ import 'package:mentasia/utils/avatar.dart';
 import 'package:mentasia/utils/glowing_action_button.dart';
 import 'package:mentasia/utils/icon_buttons.dart';
 
+import '../../models/message_data.dart';
 import '../../utils/chat_util/action_bottom.dart';
 
 class ChatScreen extends StatefulWidget {

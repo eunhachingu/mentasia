@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../constants/image_strings.dart';
-import '../../../utils/settings_util/members_widget.dart';
 
 class AboutUsScreen extends StatefulWidget {
+  static String route = "aboutUsScreen";
   const AboutUsScreen({super.key});
 
   @override
@@ -44,7 +44,6 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                       EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
                   child: Text(
                     "About Us",
-                    
                   ),
                 ),
               ),
@@ -100,40 +99,64 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                       );
                     }),
               ),
-
-              // Serg
-              // MembersWidget(
-              //   imagePath: tSerg,
-              //   name: "Sergio Angelo A. Casareo",
-              //   description:
-              //       "Bachelor of Science in Computer Engineering Student Polytecnic University of the Philippines",
-              // ),
-              // const SizedBox(
-              //   height: 10,
-              // ),
-
-              // // Kane
-              // MembersWidget(
-              //   imagePath: tKane,
-              //   name: "Kane Edward Malapo",
-              //   description:
-              //       "Bachelor of Science in Computer Engineering Student Polytecnic University of the Philippines",
-              // ),
-              // const SizedBox(
-              //   height: 10,
-              // ),
-              // MembersWidget(
-              //   imagePath: tChoi,
-              //   name: "Edilberto Jr. S. Pajunar",
-              //   description:
-              //       "Bachelor of Science in Computer Engineering Student Polytecnic University of the Philippines",
-              // ),
-              // const SizedBox(
-              //   height: 10,
-              // ),
             ],
           );
         },
+      ),
+    );
+  }
+}
+
+class MembersWidget extends StatelessWidget {
+  String imagePath;
+  String name;
+
+  MembersWidget({required this.imagePath, required this.name, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 10.0,
+      ),
+      child: Column(
+        children: [
+          Center(
+            child: Image(
+              image: AssetImage(imagePath),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            width: 240,
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.circular(15.0),
+            ),
+            child: Column(
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(
+                      name,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                Center(
+                  child: Text(
+                    "Bachelor of Science in Computer Engineering Student Polytecnic University of the Philippines",
+                    style: TextStyle(),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
