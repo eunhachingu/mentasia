@@ -1,10 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mentasia/constants/colors.dart';
 import 'package:mentasia/controllers/auth.dart';
-import 'package:mentasia/controllers/auth_controllers.dart';
 import 'package:mentasia/screens/settings/account_settings/personal_account_screen.dart';
 import 'package:mentasia/screens/settings/legal/terms_of_service_screen.dart';
 import 'package:mentasia/screens/settings/support/about_us_screen.dart';
@@ -34,7 +31,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     Navigator.pushNamed(context, HomeScreen.route);
   }
 
-  AuthController authController = AuthController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -109,9 +105,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               SettingsButton(
                 textLabel: "Personal & Account Information",
                 imageString: tPersonalInfo,
-                onTap: () => Get.to(
-                  PersonalAccountScreen(),
-                ),
+                onTap: () =>
+                    Navigator.pushNamed(context, PersonalAccountScreen.route),
               ),
 
               // Support

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mentasia/constants/colors.dart';
 import 'package:mentasia/constants/image_strings.dart';
 import 'package:mentasia/screens/settings/settings_screen.dart';
 import 'package:mentasia/utils/forms_util/reusable_form.dart';
 import 'package:mentasia/utils/forms_util/submit_card.dart';
-
-import '../../../utils/settings_util/account_card.dart';
 
 class PersonalAccountScreen extends StatefulWidget {
   static String route = "personalScreen";
@@ -17,10 +16,7 @@ class PersonalAccountScreen extends StatefulWidget {
 }
 
 class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
-  final _nameController = TextEditingController();
-  final _usernameController = TextEditingController();
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +32,7 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
               child: Center(
                 child: Text(
                   "Personal & Account Information",
-                  style: GoogleFonts.barlow(
+                  style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                   ),
@@ -50,9 +46,7 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  color: Colors.white,
                   padding: const EdgeInsets.all(20),
-                  width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -72,11 +66,8 @@ class _PersonalAccountScreenState extends State<PersonalAccountScreen> {
                       ),
                       SubmitCard(
                         buttonText: "Save",
-                        onTap: () => Get.to(
-                          SettingsScreen(),
-                        ),
-                        colorButton: Colors.black,
-                        colorText: Colors.white,
+                        onTap: () => Navigator.pop(context),
+                        colorButton: tPrimaryColor,
                       ),
                     ],
                   ),

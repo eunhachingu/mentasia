@@ -5,7 +5,6 @@ import 'package:mentasia/screens/auth_screen/login_screen.dart';
 import 'package:mentasia/screens/chat/chat_main.dart';
 import 'package:mentasia/utils/forms_util/reusable_form.dart';
 import 'package:mentasia/utils/forms_util/submit_card.dart';
-import 'package:mentasia/utils/snackBar.dart';
 
 import '../../controllers/auth.dart';
 

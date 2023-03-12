@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mentasia/models/user.dart' as model;
-import 'package:mentasia/utils/snackBar.dart';
 
 class Auth {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -37,9 +36,7 @@ class Auth {
           .collection("users")
           .doc(cred.user!.uid)
           .set(user.toJson());
-    } on FirebaseAuthException catch (e) {
-      showCustomSnackBar(context, e.toString());
-    }
+    } on FirebaseAuthException catch (e) {}
   }
 
   Future loginUser(String email, String password) async {

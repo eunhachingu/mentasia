@@ -2,10 +2,10 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:mentasia/api/helpers.dart';
-import 'package:mentasia/models/models.dart';
 import 'package:mentasia/screens/chat-screen/chat_screen.dart';
 import 'package:mentasia/utils/avatar.dart';
 
+import '../../models/message_data.dart';
 import '../../models/story_data.dart';
 
 class ChatPage extends StatefulWidget {

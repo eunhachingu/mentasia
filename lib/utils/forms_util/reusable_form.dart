@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentasia/constants/colors.dart';
 
 class ReusableForm extends StatelessWidget {
   final String labelText;
@@ -16,32 +17,45 @@ class ReusableForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      validator: validator,
-      controller: controller,
-      obscureText: obscureText,
-      decoration: InputDecoration(
-        fillColor: Color(0xFF194545),
-        filled: true,
-        hintText: labelText,
-        hintStyle: TextStyle(
-          color: Colors.white,
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: Colors.black26,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: const [
+          BoxShadow(
+            color: tBlackColor,
+            offset: Offset(0, 2),
           ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: Colors.black26,
-          ),
-        ),
+        ],
       ),
-      style: TextStyle(
-        color: Colors.white,
+      child: TextFormField(
+        validator: validator,
+        controller: controller,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          fillColor: tPrimaryColor,
+          filled: true,
+          hintText: labelText,
+          hintStyle: TextStyle(
+            color: Colors.white,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(
+              width: 2,
+              color: tBlackColor,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(
+              width: 2,
+              color: tBlackColor,
+            ),
+          ),
+        ),
+        style: TextStyle(
+          color: tWhiteColor,
+        ),
       ),
     );
   }

@@ -30,13 +30,13 @@ class SubmitCard extends StatelessWidget {
             color: colorButton,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
-              color: Colors.black26,
+              color: tBlackColor,
               width: 2,
             ),
             boxShadow: const [
               BoxShadow(
                 color: tBlackColor,
-                offset: Offset(0, 3),
+                offset: Offset(0, 2),
               ),
             ],
           ),

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-@immutable
 class MessageData {
   final String senderName;
   final String message;
